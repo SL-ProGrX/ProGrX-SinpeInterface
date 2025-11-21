@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|c:\\users\\davidgm\\documents\\5 codigos\\kindo - sinpe\\wcfcoreinterno\\wcfcoreinterno\\apigalileo\\galileoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|solutionrelative:apigalileo\\galileoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\coreinternoservicio.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|solutionrelative:coreinternoservicio.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\coreinterno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|solutionrelative:coreinterno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|WCFCoreInterno||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\1a9967763bf4c19bdc2154c30fadf5af6217ea979a7b609cd95821fc3db32e34\\ImmutableDispatchRuntime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\c2a0fbbafe0713c14afa713c6e9320c91a9ba16a72a871df1207ec072565b0fc\\DispatchOperationRuntime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06485E-DC80-419F-8145-EDD4383B70A5}|WCFCoreInterno.csproj|c:\\users\\davidgm\\documents\\5 codigos\\kindo - sinpe\\wcfcoreinterno\\wcfcoreinterno\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 211,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WCFCoreInterno",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\WCFCoreInterno.csproj",
+              "RelativeDocumentMoniker": "WCFCoreInterno.csproj",
+              "ToolTip": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\WCFCoreInterno.csproj",
+              "RelativeToolTip": "WCFCoreInterno.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-20T20:13:13.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ImmutableDispatchRuntime.cs",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\1a9967763bf4c19bdc2154c30fadf5af6217ea979a7b609cd95821fc3db32e34\\ImmutableDispatchRuntime.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1a9967763bf4c19bdc2154c30fadf5af6217ea979a7b609cd95821fc3db32e34\\ImmutableDispatchRuntime.cs",
+              "ToolTip": "C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\1a9967763bf4c19bdc2154c30fadf5af6217ea979a7b609cd95821fc3db32e34\\ImmutableDispatchRuntime.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1a9967763bf4c19bdc2154c30fadf5af6217ea979a7b609cd95821fc3db32e34\\ImmutableDispatchRuntime.cs [Read Only]",
+              "ViewState": "AgIAALYEAAAAAAAAAIAwwM8EAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T20:04:26.995Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DispatchOperationRuntime.cs",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\c2a0fbbafe0713c14afa713c6e9320c91a9ba16a72a871df1207ec072565b0fc\\DispatchOperationRuntime.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c2a0fbbafe0713c14afa713c6e9320c91a9ba16a72a871df1207ec072565b0fc\\DispatchOperationRuntime.cs",
+              "ToolTip": "C:\\Users\\DavidGM\\AppData\\Local\\Temp\\.vsdbgsrc\\c2a0fbbafe0713c14afa713c6e9320c91a9ba16a72a871df1207ec072565b0fc\\DispatchOperationRuntime.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c2a0fbbafe0713c14afa713c6e9320c91a9ba16a72a871df1207ec072565b0fc\\DispatchOperationRuntime.cs [Read Only]",
+              "ViewState": "AgIAAOUBAAAAAAAAAIAwwP4BAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T20:04:25.687Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GalileoClient.cs",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\ApiGalileo\\GalileoClient.cs",
+              "RelativeDocumentMoniker": "ApiGalileo\\GalileoClient.cs",
+              "ToolTip": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\ApiGalileo\\GalileoClient.cs",
+              "RelativeToolTip": "ApiGalileo\\GalileoClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T17:54:33.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-17T14:33:57.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CoreInterno.cs",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\CoreInterno.cs",
+              "RelativeDocumentMoniker": "CoreInterno.cs",
+              "ToolTip": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\CoreInterno.cs",
+              "RelativeToolTip": "CoreInterno.cs",
+              "ViewState": "AgIAANcHAAAAAAAAAAAawOkHAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T14:33:38.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CoreInternoServicio.svc.cs",
+              "DocumentMoniker": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\CoreInternoServicio.svc.cs",
+              "RelativeDocumentMoniker": "CoreInternoServicio.svc.cs",
+              "ToolTip": "C:\\Users\\DavidGM\\Documents\\5 CODIGOS\\KINDO - SINPE\\WCFCoreInterno\\WCFCoreInterno\\CoreInternoServicio.svc.cs",
+              "RelativeToolTip": "CoreInternoServicio.svc.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAawCcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T14:32:51.906Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

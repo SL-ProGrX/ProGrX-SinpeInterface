@@ -1,0 +1,6 @@
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Release\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Release\WCFCoreInterno.dll
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Release\WCFCoreInterno.pdb

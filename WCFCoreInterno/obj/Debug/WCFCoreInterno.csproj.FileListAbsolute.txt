@@ -1,0 +1,65 @@
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csprojAssemblyReference.cache
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\Users\NXMLTAL0234222699340\source\repos\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csprojAssemblyReference.cache
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\WS\PS_GeneralControls\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csprojResolveAssemblyReference.cache
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+E:\proyectos\CGP 3.0\ServicioWCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\Users\LENOVO_PS\Downloads\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csprojAssemblyReference.cache
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\Users\LENOVO_PS\Documents\Respaldo LLave Maya\Documentos\Prueba Core interno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\Users\vaneg\Desktop\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\Users\vaneg\Desktop\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\Users\vaneg\Desktop\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\Users\vaneg\Desktop\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\Users\vaneg\Desktop\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\Users\vaneg\Desktop\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Newtonsoft.Json.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Buffers.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Memory.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Numerics.Vectors.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.ValueTuple.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Newtonsoft.Json.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Buffers.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Memory.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Numerics.Vectors.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\System.ValueTuple.xml
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.AssemblyReference.cache
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreI.3D658299.Up2Date
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.xml
