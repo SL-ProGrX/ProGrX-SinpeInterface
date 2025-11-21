@@ -63,3 +63,29 @@ C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno
 C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb
 C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.dll
 C:\Users\DavidGM\Documents\5 CODIGOS\KINDO - SINPE\WCFCoreInterno\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\WCFCoreInterno.dll.config
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\WCFCoreInterno.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\WCFCoreInterno.pdb
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Primitives.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Newtonsoft.Json.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Buffers.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Memory.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Numerics.Vectors.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.ValueTuple.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Microsoft.Extensions.Primitives.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\Newtonsoft.Json.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Buffers.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Memory.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Numerics.Vectors.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\bin\System.ValueTuple.xml
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.AssemblyReference.cache
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\obj\Debug\WCFCoreInterno.csproj.CoreCompileInputs.cache
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\obj\Debug\WCFCoreI.3D658299.Up2Date
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\obj\Debug\WCFCoreInterno.dll
+C:\GitRepo\ProGrX-SinpeInterface\WCFCoreInterno\obj\Debug\WCFCoreInterno.pdb

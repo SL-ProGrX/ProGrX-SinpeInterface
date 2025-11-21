@@ -1667,16 +1667,16 @@ namespace WCFCoreInterno
         CuentaIBAN_Response ObtenerCuentaIBAN(int CodEmpresa,CuentaIBAN_Request DatosCuenta);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaDebitos", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaDebitosResponse")]
-        CL_ResultadoValidacion[] ValidaDebitos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones);
+        CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaCreditos", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaCreditosResponse")]
-        CL_ResultadoValidacion[] ValidaCreditos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones);
+        CL_ResultadoValidacion[] ValidaCreditos(int CodEmpresa,SI_Rastro rastro, CL_DatosTransaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaCuenta", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ValidaCuentaResponse")]
-        CL_ValidaCuenta ValidaCuenta(string Identificacion, string CuentaIBAN, int CodigoMoneda);
+        CL_ValidaCuenta ValidaCuenta(int CodEmpresad, string Identificacion, string CuentaIBAN, int CodigoMoneda);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ObtieneInfoCuenta", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ObtieneInfoCuentaResponse")]
-        CL_ObtieneInfoCuenta ObtieneInfoCuenta(string Identificacion, string CuentaIBAN);
+        CL_ObtieneInfoCuenta ObtieneInfoCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ObtieneEstadoTransaccion", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ObtieneEstadoTransaccionResponse")]
         ObtieneEstadoTransaccionResponse ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest request);
@@ -1715,7 +1715,7 @@ namespace WCFCoreInterno
         ObtenerProductosPorClienteResponse ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ObtenerTipoCambio", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ObtenerTipoCambioResponse")]
-        CL_ResultadoTipoCambio ObtenerTipoCambio(SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda);
+        CL_ResultadoTipoCambio ObtenerTipoCambio(int CodEmpresa, SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ActualizarFechaCiclo", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ActualizarFechaCicloResponse")]
         bool ActualizarFechaCiclo(int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo);
@@ -2026,31 +2026,30 @@ namespace WCFCoreInterno
             return base.Channel.ObtenerCuentaIBAN(CodEmpresa, DatosCuenta);
         }
 
+        public CL_ValidaCuenta ValidaCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN, int CodigoMoneda)
+        {
+            return base.Channel.ValidaCuenta(CodEmpresa, Identificacion, CuentaIBAN, CodigoMoneda);
+        }
+
+        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN)
+        {
+            return base.Channel.ObtieneInfoCuenta(CodEmpresa, Identificacion, CuentaIBAN);
+        }
+
         public ValidacionPerfilTrx_Response ValidarPerfilTransaccional(ValidacionPerfilTrx_Request transaccion)
         {
             return base.Channel.ValidarPerfilTransaccional(transaccion);
         }
 
-        public CL_ResultadoValidacion[] ValidaDebitos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        public CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
         {
-            return base.Channel.ValidaDebitos(rastro, transacciones);
+            return base.Channel.ValidaDebitos(CodEmpresa, rastro, transacciones);
         }
 
 
-        public CL_ResultadoValidacion[] ValidaCreditos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        public CL_ResultadoValidacion[] ValidaCreditos(int CodEmpresa,SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
         {
-            return base.Channel.ValidaCreditos(rastro, transacciones);
-        }
-
-
-        public CL_ValidaCuenta ValidaCuenta(string Identificacion, string CuentaIBAN, int CodigoMoneda)
-        {
-            return base.Channel.ValidaCuenta(Identificacion, CuentaIBAN, CodigoMoneda);
-        }
-
-        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(string Identificacion, string CuentaIBAN)
-        {
-            return base.Channel.ObtieneInfoCuenta(Identificacion, CuentaIBAN);
+            return base.Channel.ValidaCreditos(CodEmpresa, rastro, transacciones);
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2186,9 +2185,9 @@ namespace WCFCoreInterno
         }
 
 
-        public CL_ResultadoTipoCambio ObtenerTipoCambio(SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
+        public CL_ResultadoTipoCambio ObtenerTipoCambio(int CodEmpresa, SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
         {
-            return base.Channel.ObtenerTipoCambio(Rastro, CodigoServicio, CuentaOrigen, CuentaDestino, Monto, Moneda);
+            return base.Channel.ObtenerTipoCambio(CodEmpresa, Rastro, CodigoServicio, CuentaOrigen, CuentaDestino, Monto, Moneda);
         }
 
 

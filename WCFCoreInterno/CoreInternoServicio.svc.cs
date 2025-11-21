@@ -8,31 +8,11 @@ namespace WCFCoreInterno
 
         GalileoClient galileo = new GalileoClient();
 
+        #region 5 . MÉTODOS DE INTEGRACIÓN DE USO GENERAL
+
         public bool ServicioDisponible(int CodEmpresa)
         {
             return galileo.ServicioDisponible(CodEmpresa).Result;
-        }
-
-        public CL_ResultadoValidacion[] ValidaDebitos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public CL_ResultadoValidacion[] ValidaCreditos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public CL_ValidaCuenta ValidaCuenta(string Identificacion, string CuentaIBAN, int CodigoMoneda)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ValidacionPerfilTrx_Response ValidarPerfilTransaccional(ValidacionPerfilTrx_Request transaccion)
-        {
-            throw new NotImplementedException();
         }
 
         public CuentaIBAN_Response ObtenerCuentaIBAN(int CodEmpresa, CuentaIBAN_Request DatosCuenta)
@@ -40,11 +20,45 @@ namespace WCFCoreInterno
             return galileo.ObtenerCuentaIBAN(CodEmpresa, DatosCuenta).Result;
         }
 
-        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(string Identificacion, string CuentaIBAN)
+        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN)
+        {
+            return galileo.ObtieneInfoCuenta(CodEmpresa, Identificacion, CuentaIBAN).Result;
+        }
+
+        public CL_ValidaCuenta ValidaCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN, int CodigoMoneda)
+        {
+            return galileo.ValidaCuenta(CodEmpresa, Identificacion, CuentaIBAN, CodigoMoneda).Result;
+        }
+
+        public CL_ResultadoTipoCambio ObtenerTipoCambio(int CodEmpresa,SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
+        {
+            return galileo.ObtenerTipoCambio(CodEmpresa, Rastro, CodigoServicio, CuentaOrigen, CuentaDestino, Monto, Moneda).Result;
+        }
+
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ComisionRespectivaResponse ICoreInterno.ComisionRespectiva(ComisionRespectivaRequest request)
+        {
+            return galileo.ComisionRespectiva(4, request).Result;
+        }
+
+        public CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        {
+            return galileo.ValidaDebitos(CodEmpresa, rastro, transacciones).Result;
+        }
+
+        public CL_ResultadoValidacion[] ValidaCreditos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        {
+            return galileo.ValidaCreditos(CodEmpresa, rastro, transacciones).Result;
+        }
+
+        public ValidacionPerfilTrx_Response ValidarPerfilTransaccional(ValidacionPerfilTrx_Request transaccion)
         {
             throw new NotImplementedException();
         }
 
+        #endregion
+
+      
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtieneEstadoTransaccionResponse ICoreInterno.ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest request)
@@ -89,13 +103,6 @@ namespace WCFCoreInterno
             throw new NotImplementedException();
         }
 
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ComisionRespectivaResponse ICoreInterno.ComisionRespectiva(ComisionRespectivaRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-
         public CL_ResultadoActualizacion[] ReversaCreditos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
             throw new NotImplementedException();
@@ -117,12 +124,6 @@ namespace WCFCoreInterno
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtenerProductosPorClienteResponse ICoreInterno.ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public CL_ResultadoTipoCambio ObtenerTipoCambio(SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
         {
             throw new NotImplementedException();
         }
