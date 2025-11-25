@@ -10,6 +10,7 @@
 
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.ServiceModel;
 
 namespace WCFCoreInterno
 {
@@ -1682,19 +1683,19 @@ namespace WCFCoreInterno
         ObtieneEstadoTransaccionResponse ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest request);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaDebitosCongelados", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaDebitosCongeladosResponse")]
-        CL_RespuestaTransaccion[] AplicaDebitosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones);
+        CL_RespuestaTransaccion[] AplicaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaCreditosCongelados", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaCreditosCongeladosResponse")]
-        CL_RespuestaTransaccion[] AplicaCreditosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones);
+        CL_RespuestaTransaccion[] AplicaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ConfirmaCreditosCongelados", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ConfirmaCreditosCongeladosResponse")]
-        CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones);
+        CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ConfirmaDebitosCongelados", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ConfirmaDebitosCongeladosResponse")]
-        CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones);
+        CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaTransferenciasFirmes", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/AplicaTransferenciasFirmesResponse")]
-        CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(SI_Rastro rastro, CL_Transaccion[] transacciones);
+        CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/SaldoDisponible", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/SaldoDisponibleResponse")]
         SaldoDisponibleResponse SaldoDisponible(SaldoDisponibleRequest request);
@@ -1703,10 +1704,10 @@ namespace WCFCoreInterno
         ComisionRespectivaResponse ComisionRespectiva(ComisionRespectivaRequest request);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ReversaCreditos", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ReversaCreditosResponse")]
-        CL_ResultadoActualizacion[] ReversaCreditos(SI_Rastro rastro, TransaccionRechazada[] transacciones);
+        CL_ResultadoActualizacion[] ReversaCreditos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ReversaDebitos", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ReversaDebitosResponse")]
-        CL_ResultadoActualizacion[] ReversaDebitos(SI_Rastro rastro, TransaccionRechazada[] transacciones);
+        CL_ResultadoActualizacion[] ReversaDebitos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ObtenerInformacionCliente", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ObtenerInformacionClienteResponse")]
         ObtenerInformacionClienteResponse ObtenerInformacionCliente(ObtenerInformacionClienteRequest request);
@@ -1718,10 +1719,10 @@ namespace WCFCoreInterno
         CL_ResultadoTipoCambio ObtenerTipoCambio(int CodEmpresa, SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/ActualizarFechaCiclo", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/ActualizarFechaCicloResponse")]
-        bool ActualizarFechaCiclo(int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo);
+        bool ActualizarFechaCiclo(int CodEmpresa, int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/LiquidarCiclo", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/LiquidarCicloResponse")]
-        bool LiquidarCiclo(int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo);
+        bool LiquidarCiclo(int CodEmpresa, int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://prosoft.CGPbackOffice/ICoreInterno/PreferenciasNotificacion", ReplyAction = "http://prosoft.CGPbackOffice/ICoreInterno/PreferenciasNotificacionResponse")]
         CL_RespuestaNotificacion[] PreferenciasNotificacion(SI_Rastro rastro, CL_Notificacion[] notificacion);
@@ -1733,6 +1734,9 @@ namespace WCFCoreInterno
     [System.ServiceModel.MessageContractAttribute(WrapperName = "ObtieneEstadoTransaccion", WrapperNamespace = "http://prosoft.CGPbackOffice/", IsWrapped = true)]
     public partial class ObtieneEstadoTransaccionRequest
     {
+
+        [MessageHeader(MustUnderstand = false)]
+        public int? CodEmpresa;
 
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://prosoft.CGPbackOffice/", Order = 0)]
         public string CodigoReferenciaSINPE;
@@ -1775,6 +1779,8 @@ namespace WCFCoreInterno
     [System.ServiceModel.MessageContractAttribute(WrapperName = "SaldoDisponible", WrapperNamespace = "http://prosoft.CGPbackOffice/", IsWrapped = true)]
     public partial class SaldoDisponibleRequest
     {
+        [MessageHeader(MustUnderstand = false)]
+        public int? CodEmpresa;
 
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://prosoft.CGPbackOffice/", Order = 0)]
         public SI_Rastro rastro;
@@ -1837,6 +1843,8 @@ namespace WCFCoreInterno
     [System.ServiceModel.MessageContractAttribute(WrapperName = "ComisionRespectiva", WrapperNamespace = "http://prosoft.CGPbackOffice/", IsWrapped = true)]
     public partial class ComisionRespectivaRequest
     {
+        [MessageHeader(MustUnderstand = false)]
+        public int? CodEmpresa;
 
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://prosoft.CGPbackOffice/", Order = 0)]
         public SI_Rastro rastro;
@@ -1903,6 +1911,8 @@ namespace WCFCoreInterno
     [System.ServiceModel.MessageContractAttribute(WrapperName = "ObtenerInformacionCliente", WrapperNamespace = "http://prosoft.CGPbackOffice/", IsWrapped = true)]
     public partial class ObtenerInformacionClienteRequest
     {
+        [MessageHeader(MustUnderstand = false)]
+        public int? CodEmpresa;
 
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://prosoft.CGPbackOffice/", Order = 0)]
         public string identificacion;
@@ -1945,6 +1955,8 @@ namespace WCFCoreInterno
     [System.ServiceModel.MessageContractAttribute(WrapperName = "ObtenerProductosPorCliente", WrapperNamespace = "http://prosoft.CGPbackOffice/", IsWrapped = true)]
     public partial class ObtenerProductosPorClienteRequest
     {
+        [MessageHeader(MustUnderstand = false)]
+        public int? CodEmpresa;
 
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://prosoft.CGPbackOffice/", Order = 0)]
         public string identificacion;
@@ -2058,9 +2070,10 @@ namespace WCFCoreInterno
             return base.Channel.ObtieneEstadoTransaccion(request);
         }
 
-        public bool ObtieneEstadoTransaccion(string CodigoReferenciaSINPE, out string ComprobanteInterno)
+        public bool ObtieneEstadoTransaccion(int CodEmpresa, string CodigoReferenciaSINPE, out string ComprobanteInterno)
         {
             ObtieneEstadoTransaccionRequest inValue = new ObtieneEstadoTransaccionRequest();
+            inValue.CodEmpresa = CodEmpresa;
             inValue.CodigoReferenciaSINPE = CodigoReferenciaSINPE;
             ObtieneEstadoTransaccionResponse retVal = ((ICoreInterno)(this)).ObtieneEstadoTransaccion(inValue);
             ComprobanteInterno = retVal.ComprobanteInterno;
@@ -2068,33 +2081,33 @@ namespace WCFCoreInterno
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(int CodEmpresa,SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
-            return base.Channel.AplicaDebitosCongelados(rastro, transacciones);
+            return base.Channel.AplicaDebitosCongelados(CodEmpresa, rastro, transacciones);
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(int CodEmpresa,SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
-            return base.Channel.AplicaCreditosCongelados(rastro, transacciones);
+            return base.Channel.AplicaCreditosCongelados(CodEmpresa, rastro, transacciones);
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            return base.Channel.ConfirmaCreditosCongelados(rastro, transacciones);
+            return base.Channel.ConfirmaCreditosCongelados(CodEmpresa, rastro, transacciones);
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            return base.Channel.ConfirmaDebitosCongelados(rastro, transacciones);
+            return base.Channel.ConfirmaDebitosCongelados(CodEmpresa,rastro, transacciones);
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
-            return base.Channel.AplicaTransferenciasFirmes(rastro, transacciones);
+            return base.Channel.AplicaTransferenciasFirmes(CodEmpresa, rastro, transacciones);
         }
 
 
@@ -2104,9 +2117,10 @@ namespace WCFCoreInterno
             return base.Channel.SaldoDisponible(request);
         }
 
-        public E_Resultado SaldoDisponible(SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out bool disponible)
+        public E_Resultado SaldoDisponible(int CodEmpresa, SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out bool disponible)
         {
             SaldoDisponibleRequest inValue = new SaldoDisponibleRequest();
+            inValue.CodEmpresa = CodEmpresa;
             inValue.rastro = rastro;
             inValue.cuentaIBAN = cuentaIBAN;
             inValue.identificacion = identificacion;
@@ -2125,9 +2139,10 @@ namespace WCFCoreInterno
             return base.Channel.ComisionRespectiva(request);
         }
 
-        public E_Resultado ComisionRespectiva(SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out decimal comision, out int codigoMonedaComision)
+        public E_Resultado ComisionRespectiva(int codEmpresa, SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out decimal comision, out int codigoMonedaComision)
         {
             ComisionRespectivaRequest inValue = new ComisionRespectivaRequest();
+            inValue.CodEmpresa = codEmpresa;
             inValue.rastro = rastro;
             inValue.cuentaIBAN = cuentaIBAN;
             inValue.identificacion = identificacion;
@@ -2141,15 +2156,15 @@ namespace WCFCoreInterno
         }
 
 
-        public CL_ResultadoActualizacion[] ReversaCreditos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaCreditos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            return base.Channel.ReversaCreditos(rastro, transacciones);
+            return base.Channel.ReversaCreditos(CodEmpresa, rastro, transacciones);
         }
 
 
-        public CL_ResultadoActualizacion[] ReversaDebitos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaDebitos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            return base.Channel.ReversaDebitos(rastro, transacciones);
+            return base.Channel.ReversaDebitos(CodEmpresa, rastro, transacciones);
         }
 
 
@@ -2159,9 +2174,10 @@ namespace WCFCoreInterno
             return base.Channel.ObtenerInformacionCliente(request);
         }
 
-        public E_Resultado ObtenerInformacionCliente(string identificacion, out CL_InformacionCliente informacionCliente)
+        public E_Resultado ObtenerInformacionCliente(int CodEmpresa, string identificacion, out CL_InformacionCliente informacionCliente)
         {
             ObtenerInformacionClienteRequest inValue = new ObtenerInformacionClienteRequest();
+            inValue.CodEmpresa = CodEmpresa;
             inValue.identificacion = identificacion;
             ObtenerInformacionClienteResponse retVal = ((ICoreInterno)(this)).ObtenerInformacionCliente(inValue);
             informacionCliente = retVal.informacionCliente;
@@ -2175,9 +2191,10 @@ namespace WCFCoreInterno
             return base.Channel.ObtenerProductosPorCliente(request);
         }
 
-        public E_Resultado ObtenerProductosPorCliente(string identificacion, out CL_ProductoCliente[] productos)
+        public E_Resultado ObtenerProductosPorCliente(int CodEmpresa, string identificacion, out CL_ProductoCliente[] productos)
         {
             ObtenerProductosPorClienteRequest inValue = new ObtenerProductosPorClienteRequest();
+            inValue.CodEmpresa = CodEmpresa;
             inValue.identificacion = identificacion;
             ObtenerProductosPorClienteResponse retVal = ((ICoreInterno)(this)).ObtenerProductosPorCliente(inValue);
             productos = retVal.productos;
@@ -2191,15 +2208,15 @@ namespace WCFCoreInterno
         }
 
 
-        public bool ActualizarFechaCiclo(int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
+        public bool ActualizarFechaCiclo(int CodEmpresa, int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
         {
-            return base.Channel.ActualizarFechaCiclo(ComprobanteCGP, DocumentoSistemaInterno, ServicioSINPE, FechaCiclo, CodigoReferenciaAnterior, CodigoReferenciaNuevo);
+            return base.Channel.ActualizarFechaCiclo(CodEmpresa,ComprobanteCGP, DocumentoSistemaInterno, ServicioSINPE, FechaCiclo, CodigoReferenciaAnterior, CodigoReferenciaNuevo);
         }
 
 
-        public bool LiquidarCiclo(int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
+        public bool LiquidarCiclo(int CodEmpresa, int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
         {
-            return base.Channel.LiquidarCiclo(EntidadesAplazadas, ServicioSINPE, Modalidad, FechaCiclo);
+            return base.Channel.LiquidarCiclo(CodEmpresa, EntidadesAplazadas, ServicioSINPE, Modalidad, FechaCiclo);
         }
 
 

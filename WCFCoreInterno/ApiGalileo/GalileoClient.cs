@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
@@ -7,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Util;
 
 namespace WCFCoreInterno.ApiGalileo
 {
@@ -21,6 +23,8 @@ namespace WCFCoreInterno.ApiGalileo
             galileoUri = System.Configuration.ConfigurationManager.AppSettings["GalileoUri"];
             _token = System.Configuration.ConfigurationManager.AppSettings["GalileoToken"];
         }
+
+        #region Métodos de integración de uso general
 
         public async Task<bool> ServicioDisponible(int CodEmpresa)
         {
@@ -203,7 +207,7 @@ namespace WCFCoreInterno.ApiGalileo
             }
         }
 
-        public async Task<ComisionRespectivaResponse> ComisionRespectiva(int CodEmpresa, ComisionRespectivaRequest request)
+        public async Task<ComisionRespectivaResponse> ComisionRespectiva(ComisionRespectivaRequest request)
         {
             var rersponse = new ComisionRespectivaResponse();
             try
@@ -217,7 +221,7 @@ namespace WCFCoreInterno.ApiGalileo
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/ComisionRespectiva/{CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/ComisionRespectiva/{request.CodEmpresa}",
                          jsonContent
                      );
 
@@ -248,8 +252,8 @@ namespace WCFCoreInterno.ApiGalileo
 
                 var payload = new
                 {
-                    Rastro = Rastro,
-                    Debitos = Debitos
+                    rastro = Rastro,
+                    transacciones = Debitos
                 };
 
                 var jsonContent = new StringContent(
@@ -291,8 +295,8 @@ namespace WCFCoreInterno.ApiGalileo
 
                 var payload = new
                 {
-                    Rastro = Rastro,
-                    Debitos = Debitos
+                    rastro = Rastro,
+                    transacciones = Debitos
                 };
 
                 var jsonContent = new StringContent(
@@ -324,6 +328,475 @@ namespace WCFCoreInterno.ApiGalileo
                 };
             }
         }
+
+        #endregion
+
+        #region Métodos para la integración transaccional
+       
+        public async Task<CL_RespuestaTransaccion[]> AplicaDebitosCongelados(int CodEmpresa, SI_Rastro Rastro, CL_Transaccion[] Debitos)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Debitos
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/AplicaDebitosCongelados/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_RespuestaTransaccion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_RespuestaTransaccion[]
+                {
+                    new CL_RespuestaTransaccion()
+                    {
+                        IdRelacionCliente = null,
+                        InformacionAdicional = null,
+                        MotivoError = 28,
+                        Resultado = E_Resultado.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<CL_RespuestaTransaccion[]> AplicaCreditosCongelados(int CodEmpresa, SI_Rastro Rastro, CL_Transaccion[] Creditos)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Creditos
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/AplicaCreditosCongelados/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_RespuestaTransaccion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_RespuestaTransaccion[]
+                {
+                    new CL_RespuestaTransaccion()
+                    {
+                        IdRelacionCliente = null,
+                        InformacionAdicional = null,
+                        MotivoError = 28,
+                        Resultado = E_Resultado.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<CL_ResultadoActualizacion[]> ConfirmaDebitosCongelados(int CodEmpresa, SI_Rastro Rastro, CL_ActualizaTransaccion[] Transacciones)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Transacciones
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ConfirmaDebitosCongelados/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_ResultadoActualizacion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_ResultadoActualizacion[]
+                {
+                    new CL_ResultadoActualizacion()
+                    {
+                        ExtensionData = null,
+                        IdRelacionCliente = null,
+                        Resultado = E_ResultadoActualizacion.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<CL_ResultadoActualizacion[]> ConfirmaCreditosCongelados(int CodEmpresa, SI_Rastro Rastro, CL_ActualizaTransaccion[] Transacciones)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Transacciones
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ConfirmaCreditosCongelados/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_ResultadoActualizacion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_ResultadoActualizacion[]
+                {
+                    new CL_ResultadoActualizacion()
+                    {
+                        ExtensionData = null,
+                        IdRelacionCliente = null,
+                        Resultado = E_ResultadoActualizacion.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<CL_ResultadoActualizacion[]> ReversaCreditos(int CodEmpresa, SI_Rastro Rastro, TransaccionRechazada[] Transacciones)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Transacciones
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ReversaCreditos/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_ResultadoActualizacion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_ResultadoActualizacion[]
+                {
+                    new CL_ResultadoActualizacion()
+                    {
+                        ExtensionData = null,
+                        IdRelacionCliente = null,
+                        Resultado = E_ResultadoActualizacion.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<CL_ResultadoActualizacion[]> ReversaDebitos(int CodEmpresa, SI_Rastro Rastro, TransaccionRechazada[] Transacciones)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    rastro = Rastro,
+                    transacciones = Transacciones
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ReversaDebitos/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<CL_ResultadoActualizacion[]>(json);
+            }
+            catch (System.Exception)
+            {
+                return new CL_ResultadoActualizacion[]
+                {
+                    new CL_ResultadoActualizacion()
+                    {
+                        ExtensionData = null,
+                        IdRelacionCliente = null,
+                        Resultado = E_ResultadoActualizacion.Error
+                    }
+                };
+            }
+        }
+
+        public async Task<ObtieneEstadoTransaccionResponse> ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest Request)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(Request),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ObtieneEstadoTransaccion/{Request.CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ObtieneEstadoTransaccionResponse>(json);
+            }
+            catch (System.Exception)
+            {
+                return new ObtieneEstadoTransaccionResponse
+                {
+                    ComprobanteInterno = null,
+                    ObtieneEstadoTransaccionResult = false
+                };
+            }
+        }
+
+        #endregion
+
+        #region Métodos para la integración de la liquidación de la cámara
+        public async Task<bool> ActualizarFechaCiclo(int CodEmpresa, int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    comprobanteCGP = ComprobanteCGP,
+                    documentoSistemaInterno = DocumentoSistemaInterno,
+                    servicioSINPE = ServicioSINPE,
+                    fechaCiclo = FechaCiclo,
+                    codigoReferenciaAnterior = CodigoReferenciaAnterior,
+                    codigoReferenciaNuevo = CodigoReferenciaNuevo
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ActualizarFechaCiclo/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<bool>(json);
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> LiquidarCiclo(int CodEmpresa, int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, DateTime FechaCiclo)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var payload = new
+                {
+                    entidadesAplazadas = EntidadesAplazadas,
+                    servicioSINPE = ServicioSINPE,
+                    modalidad = Modalidad,
+                    fechaCiclo = FechaCiclo
+                };
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(payload),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/LiquidarCiclo/{CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<bool>(json);
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Métodos para la integración del PortalCGP
+
+        public async Task<SaldoDisponibleResponse> SaldoDisponible(SaldoDisponibleRequest Request)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(Request),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/SaldoDisponible/{Request.CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<SaldoDisponibleResponse>(json);
+            }
+            catch (System.Exception)
+            {
+                return new SaldoDisponibleResponse
+                {
+                    disponible = false,
+                    SaldoDisponibleResult = E_Resultado.Error
+                };
+            }
+        }
+
+        public async Task<ObtenerInformacionClienteResponse> ObtenerInformacionCliente(ObtenerInformacionClienteRequest request)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(request),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ObtenerInformacionCliente/{request.CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ObtenerInformacionClienteResponse>(json);
+            }
+            catch (System.Exception)
+            {
+                return new ObtenerInformacionClienteResponse
+                {
+                    informacionCliente = null,
+                    ObtenerInformacionClienteResult = E_Resultado.Error
+                };
+            }
+        }
+
+        public async Task<ObtenerProductosPorClienteResponse> ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request)
+        {
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", _token);
+
+                var jsonContent = new StringContent(
+                    JsonConvert.SerializeObject(request),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var response = await _httpClient.PostAsync(
+                         $"{galileoUri}/api/mKindoService/ObtenerProductosPorCliente/{request.CodEmpresa}",
+                         jsonContent
+                     );
+
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ObtenerProductosPorClienteResponse>(json);
+            }
+            catch (System.Exception)
+            {
+                return new ObtenerProductosPorClienteResponse
+                {
+                    productos = null,
+                    ObtenerProductosPorClienteResult = E_Resultado.Error
+                };
+            }
+        }
+
+        #endregion
 
     }
 }

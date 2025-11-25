@@ -7,6 +7,8 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\Users\NXMLTAL0234222699340\Documents\Publicados\WCFCoreInterno</_PublishTargetUrl>
+    <History>False|2025-11-24T14:17:47.0287396Z||;</History>
+    <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/WCFCoreInterno.dll">
@@ -16,7 +18,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/12/2018 11:00:34</publishTime>
     </File>
     <File Include="CoreInternoServicio.svc">
-      <publishTime>12/11/2018 15:54:07</publishTime>
+      <publishTime>11/12/2018 15:54:07</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>12/12/2018 11:00:35</publishTime>

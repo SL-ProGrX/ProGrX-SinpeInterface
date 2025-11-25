@@ -38,7 +38,7 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ComisionRespectivaResponse ICoreInterno.ComisionRespectiva(ComisionRespectivaRequest request)
         {
-            return galileo.ComisionRespectiva(4, request).Result;
+            return galileo.ComisionRespectiva(request).Result;
         }
 
         public CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
@@ -63,35 +63,35 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtieneEstadoTransaccionResponse ICoreInterno.ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest request)
         {
-            throw new NotImplementedException();
+           return galileo.ObtieneEstadoTransaccion(request).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] Debitos)
         {
-            throw new NotImplementedException();
+            return galileo.AplicaDebitosCongelados(CodEmpresa, rastro, Debitos).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
-            throw new NotImplementedException();
+            return galileo.AplicaCreditosCongelados(CodEmpresa, rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            throw new NotImplementedException();
+            return galileo.ConfirmaCreditosCongelados(CodEmpresa, rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            throw new NotImplementedException();
+            return galileo.ConfirmaDebitosCongelados(CodEmpresa, rastro, transacciones).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
             throw new NotImplementedException();
         }
@@ -100,42 +100,42 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SaldoDisponibleResponse ICoreInterno.SaldoDisponible(SaldoDisponibleRequest request)
         {
-            throw new NotImplementedException();
+            return galileo.SaldoDisponible(request).Result;
         }
 
-        public CL_ResultadoActualizacion[] ReversaCreditos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaCreditos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            throw new NotImplementedException();
+            return galileo.ReversaCreditos(CodEmpresa, rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ReversaDebitos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaDebitos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            throw new NotImplementedException();
+            return galileo.ReversaDebitos(CodEmpresa, rastro, transacciones).Result;
         }
 
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtenerInformacionClienteResponse ICoreInterno.ObtenerInformacionCliente(ObtenerInformacionClienteRequest request)
         {
-            throw new NotImplementedException();
+           return galileo.ObtenerInformacionCliente(request).Result;
         }
 
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtenerProductosPorClienteResponse ICoreInterno.ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request)
         {
-            throw new NotImplementedException();
+            return galileo.ObtenerProductosPorCliente(request).Result;
         }
 
-        public bool ActualizarFechaCiclo(int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
+        public bool ActualizarFechaCiclo(int CodEmpresa, int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
         {
-            throw new NotImplementedException();
+            return galileo.ActualizarFechaCiclo(CodEmpresa, ComprobanteCGP, DocumentoSistemaInterno, ServicioSINPE, FechaCiclo, CodigoReferenciaAnterior, CodigoReferenciaNuevo).Result;
         }
 
-        public bool LiquidarCiclo(int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
+        public bool LiquidarCiclo(int CodEmpresa, int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
         {
-            throw new NotImplementedException();
+            return galileo.LiquidarCiclo(CodEmpresa, EntidadesAplazadas, ServicioSINPE, Modalidad, FechaCiclo).Result;
         }
 
         public CL_RespuestaNotificacion[] PreferenciasNotificacion(SI_Rastro rastro, CL_Notificacion[] notificacion)
