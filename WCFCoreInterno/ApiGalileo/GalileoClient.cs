@@ -207,7 +207,7 @@ namespace WCFCoreInterno.ApiGalileo
             }
         }
 
-        public async Task<ComisionRespectivaResponse> ComisionRespectiva(ComisionRespectivaRequest request)
+        public async Task<ComisionRespectivaResponse> ComisionRespectiva(int? CodEmpresa, ComisionRespectivaRequest request)
         {
             var rersponse = new ComisionRespectivaResponse();
             try
@@ -215,13 +215,25 @@ namespace WCFCoreInterno.ApiGalileo
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", _token);
 
+                //creo un objeto nuevo sin CodEmpresa
+                var requestPayload = new
+                {
+                   rastro = request.rastro,
+                   cuentaIBAN = request.cuentaIBAN,
+                   identificacion = request.identificacion,
+                   codigoMoneda = request.codigoMoneda,
+                   monto = request.monto,
+                   codigoServicio = request.codigoServicio
+                };
+
+
                 var jsonContent = new StringContent(
-                    JsonConvert.SerializeObject(request),
+                    JsonConvert.SerializeObject(requestPayload),
                     Encoding.UTF8,
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/ComisionRespectiva/{request.CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/ComisionRespectiva/{CodEmpresa}",
                          jsonContent
                      );
 

@@ -3,7 +3,7 @@
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\DavidGM\Documents\Nueva carpeta</_PublishTargetUrl>
-    <History>True|2025-11-24T15:06:35.9833401Z||;True|2025-11-24T08:55:09.3213020-06:00||;True|2025-11-24T08:18:50.2325436-06:00||;</History>
+    <History>True|2025-11-25T21:52:37.3899817Z||;True|2025-11-24T09:06:35.9833401-06:00||;True|2025-11-24T08:55:09.3213020-06:00||;True|2025-11-24T08:18:50.2325436-06:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -35,16 +35,16 @@
       <publishTime>03/19/2025 14:56:12</publishTime>
     </File>
     <File Include="bin/WCFCoreInterno.dll">
-      <publishTime>11/24/2025 09:06:35</publishTime>
+      <publishTime>11/25/2025 15:52:37</publishTime>
     </File>
     <File Include="bin/WCFCoreInterno.pdb">
-      <publishTime>11/24/2025 09:06:35</publishTime>
+      <publishTime>11/25/2025 15:52:37</publishTime>
     </File>
     <File Include="CoreInternoServicio.svc">
       <publishTime>06/02/2025 09:43:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/24/2025 09:06:35</publishTime>
+      <publishTime>11/25/2025 15:52:37</publishTime>
     </File>
   </ItemGroup>
 </Project>

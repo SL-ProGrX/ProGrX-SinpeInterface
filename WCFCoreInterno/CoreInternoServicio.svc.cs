@@ -38,7 +38,7 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ComisionRespectivaResponse ICoreInterno.ComisionRespectiva(ComisionRespectivaRequest request)
         {
-            return galileo.ComisionRespectiva(request).Result;
+            return galileo.ComisionRespectiva(request.CodEmpresa, request).Result;
         }
 
         public CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)

@@ -1868,8 +1868,9 @@ namespace WCFCoreInterno
         {
         }
 
-        public ComisionRespectivaRequest(SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio)
+        public ComisionRespectivaRequest(int CodEmpresa, SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio)
         {
+            this.CodEmpresa = CodEmpresa;
             this.rastro = rastro;
             this.cuentaIBAN = cuentaIBAN;
             this.identificacion = identificacion;
@@ -2139,16 +2140,9 @@ namespace WCFCoreInterno
             return base.Channel.ComisionRespectiva(request);
         }
 
-        public E_Resultado ComisionRespectiva(int codEmpresa, SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out decimal comision, out int codigoMonedaComision)
+        public E_Resultado ComisionRespectiva(int CodEmpresa, SI_Rastro rastro, string cuentaIBAN, string identificacion, int codigoMoneda, decimal monto, int codigoServicio, out decimal comision, out int codigoMonedaComision)
         {
-            ComisionRespectivaRequest inValue = new ComisionRespectivaRequest();
-            inValue.CodEmpresa = codEmpresa;
-            inValue.rastro = rastro;
-            inValue.cuentaIBAN = cuentaIBAN;
-            inValue.identificacion = identificacion;
-            inValue.codigoMoneda = codigoMoneda;
-            inValue.monto = monto;
-            inValue.codigoServicio = codigoServicio;
+            ComisionRespectivaRequest inValue = new ComisionRespectivaRequest(CodEmpresa, rastro, cuentaIBAN, identificacion, codigoMoneda, monto, codigoServicio);
             ComisionRespectivaResponse retVal = ((ICoreInterno)(this)).ComisionRespectiva(inValue);
             comision = retVal.comision;
             codigoMonedaComision = retVal.codigoMonedaComision;
