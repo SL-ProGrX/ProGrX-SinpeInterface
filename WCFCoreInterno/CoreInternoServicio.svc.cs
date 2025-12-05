@@ -10,45 +10,45 @@ namespace WCFCoreInterno
 
         #region 5 . MÉTODOS DE INTEGRACIÓN DE USO GENERAL
 
-        public bool ServicioDisponible(int CodEmpresa)
+        public bool ServicioDisponible()
         {
-            return galileo.ServicioDisponible(CodEmpresa).Result;
+            return galileo.ServicioDisponible(galileo.getCodEmpresa()).Result;
         }
 
-        public CuentaIBAN_Response ObtenerCuentaIBAN(int CodEmpresa, CuentaIBAN_Request DatosCuenta)
+        public CuentaIBAN_Response ObtenerCuentaIBAN(CuentaIBAN_Request DatosCuenta)
         {
-            return galileo.ObtenerCuentaIBAN(CodEmpresa, DatosCuenta).Result;
+            return galileo.ObtenerCuentaIBAN(galileo.getCodEmpresa(), DatosCuenta).Result;
         }
 
-        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN)
+        public CL_ObtieneInfoCuenta ObtieneInfoCuenta(string Identificacion, string CuentaIBAN)
         {
-            return galileo.ObtieneInfoCuenta(CodEmpresa, Identificacion, CuentaIBAN).Result;
+            return galileo.ObtieneInfoCuenta(galileo.getCodEmpresa(), Identificacion, CuentaIBAN).Result;
         }
 
-        public CL_ValidaCuenta ValidaCuenta(int CodEmpresa, string Identificacion, string CuentaIBAN, int CodigoMoneda)
+        public CL_ValidaCuenta ValidaCuenta(string Identificacion, string CuentaIBAN, int CodigoMoneda)
         {
-            return galileo.ValidaCuenta(CodEmpresa, Identificacion, CuentaIBAN, CodigoMoneda).Result;
+            return galileo.ValidaCuenta(galileo.getCodEmpresa(), Identificacion, CuentaIBAN, CodigoMoneda).Result;
         }
 
-        public CL_ResultadoTipoCambio ObtenerTipoCambio(int CodEmpresa,SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
+        public CL_ResultadoTipoCambio ObtenerTipoCambio(SI_Rastro Rastro, int CodigoServicio, string CuentaOrigen, string CuentaDestino, decimal Monto, int Moneda)
         {
-            return galileo.ObtenerTipoCambio(CodEmpresa, Rastro, CodigoServicio, CuentaOrigen, CuentaDestino, Monto, Moneda).Result;
+            return galileo.ObtenerTipoCambio(galileo.getCodEmpresa(), Rastro, CodigoServicio, CuentaOrigen, CuentaDestino, Monto, Moneda).Result;
         }
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ComisionRespectivaResponse ICoreInterno.ComisionRespectiva(ComisionRespectivaRequest request)
         {
-            return galileo.ComisionRespectiva(request.CodEmpresa, request).Result;
+            return galileo.ComisionRespectiva(galileo.getCodEmpresa(), request).Result;
         }
 
-        public CL_ResultadoValidacion[] ValidaDebitos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        public CL_ResultadoValidacion[] ValidaDebitos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
         {
-            return galileo.ValidaDebitos(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ValidaDebitos(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
-        public CL_ResultadoValidacion[] ValidaCreditos(int CodEmpresa, SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
+        public CL_ResultadoValidacion[] ValidaCreditos(SI_Rastro rastro, CL_DatosTransaccion[] transacciones)
         {
-            return galileo.ValidaCreditos(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ValidaCreditos(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
         public ValidacionPerfilTrx_Response ValidarPerfilTransaccional(ValidacionPerfilTrx_Request transaccion)
@@ -63,35 +63,35 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtieneEstadoTransaccionResponse ICoreInterno.ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest request)
         {
-           return galileo.ObtieneEstadoTransaccion(request).Result;
+           return galileo.ObtieneEstadoTransaccion(galileo.getCodEmpresa(), request).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] Debitos)
+        public CL_RespuestaTransaccion[] AplicaDebitosCongelados(SI_Rastro rastro, CL_Transaccion[] Debitos)
         {
-            return galileo.AplicaDebitosCongelados(CodEmpresa, rastro, Debitos).Result;
+            return galileo.AplicaDebitosCongelados(galileo.getCodEmpresa(), rastro, Debitos).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaCreditosCongelados(SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
-            return galileo.AplicaCreditosCongelados(CodEmpresa, rastro, transacciones).Result;
+            return galileo.AplicaCreditosCongelados(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaCreditosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            return galileo.ConfirmaCreditosCongelados(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ConfirmaCreditosCongelados(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(int CodEmpresa, SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
+        public CL_ResultadoActualizacion[] ConfirmaDebitosCongelados(SI_Rastro rastro, CL_ActualizaTransaccion[] transacciones)
         {
-            return galileo.ConfirmaDebitosCongelados(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ConfirmaDebitosCongelados(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
 
-        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(int CodEmpresa, SI_Rastro rastro, CL_Transaccion[] transacciones)
+        public CL_RespuestaTransaccion[] AplicaTransferenciasFirmes(SI_Rastro rastro, CL_Transaccion[] transacciones)
         {
             throw new NotImplementedException();
         }
@@ -100,42 +100,42 @@ namespace WCFCoreInterno
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SaldoDisponibleResponse ICoreInterno.SaldoDisponible(SaldoDisponibleRequest request)
         {
-            return galileo.SaldoDisponible(request).Result;
+            return galileo.SaldoDisponible(galileo.getCodEmpresa(), request).Result;
         }
 
-        public CL_ResultadoActualizacion[] ReversaCreditos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaCreditos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            return galileo.ReversaCreditos(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ReversaCreditos(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
 
-        public CL_ResultadoActualizacion[] ReversaDebitos(int CodEmpresa, SI_Rastro rastro, TransaccionRechazada[] transacciones)
+        public CL_ResultadoActualizacion[] ReversaDebitos(SI_Rastro rastro, TransaccionRechazada[] transacciones)
         {
-            return galileo.ReversaDebitos(CodEmpresa, rastro, transacciones).Result;
+            return galileo.ReversaDebitos(galileo.getCodEmpresa(), rastro, transacciones).Result;
         }
 
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtenerInformacionClienteResponse ICoreInterno.ObtenerInformacionCliente(ObtenerInformacionClienteRequest request)
         {
-           return galileo.ObtenerInformacionCliente(request).Result;
+           return galileo.ObtenerInformacionCliente(galileo.getCodEmpresa(), request).Result;
         }
 
 
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ObtenerProductosPorClienteResponse ICoreInterno.ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request)
         {
-            return galileo.ObtenerProductosPorCliente(request).Result;
+            return galileo.ObtenerProductosPorCliente(galileo.getCodEmpresa(), request).Result;
         }
 
-        public bool ActualizarFechaCiclo(int CodEmpresa, int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
+        public bool ActualizarFechaCiclo(int ComprobanteCGP, string DocumentoSistemaInterno, int ServicioSINPE, System.DateTime FechaCiclo, string CodigoReferenciaAnterior, string CodigoReferenciaNuevo)
         {
-            return galileo.ActualizarFechaCiclo(CodEmpresa, ComprobanteCGP, DocumentoSistemaInterno, ServicioSINPE, FechaCiclo, CodigoReferenciaAnterior, CodigoReferenciaNuevo).Result;
+            return galileo.ActualizarFechaCiclo(galileo.getCodEmpresa(), ComprobanteCGP, DocumentoSistemaInterno, ServicioSINPE, FechaCiclo, CodigoReferenciaAnterior, CodigoReferenciaNuevo).Result;
         }
 
-        public bool LiquidarCiclo(int CodEmpresa, int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
+        public bool LiquidarCiclo(int[] EntidadesAplazadas, int ServicioSINPE, string Modalidad, System.DateTime FechaCiclo)
         {
-            return galileo.LiquidarCiclo(CodEmpresa, EntidadesAplazadas, ServicioSINPE, Modalidad, FechaCiclo).Result;
+            return galileo.LiquidarCiclo(galileo.getCodEmpresa(), EntidadesAplazadas, ServicioSINPE, Modalidad, FechaCiclo).Result;
         }
 
         public CL_RespuestaNotificacion[] PreferenciasNotificacion(SI_Rastro rastro, CL_Notificacion[] notificacion)

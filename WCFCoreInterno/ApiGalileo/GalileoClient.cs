@@ -3,9 +3,11 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Util;
@@ -599,7 +601,7 @@ namespace WCFCoreInterno.ApiGalileo
             }
         }
 
-        public async Task<ObtieneEstadoTransaccionResponse> ObtieneEstadoTransaccion(ObtieneEstadoTransaccionRequest Request)
+        public async Task<ObtieneEstadoTransaccionResponse> ObtieneEstadoTransaccion(int CodEmpresa, ObtieneEstadoTransaccionRequest Request)
         {
             try
             {
@@ -612,7 +614,7 @@ namespace WCFCoreInterno.ApiGalileo
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/ObtieneEstadoTransaccion/{Request.CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/ObtieneEstadoTransaccion/{CodEmpresa}",
                          jsonContent
                      );
 
@@ -712,7 +714,7 @@ namespace WCFCoreInterno.ApiGalileo
 
         #region Métodos para la integración del PortalCGP
 
-        public async Task<SaldoDisponibleResponse> SaldoDisponible(SaldoDisponibleRequest Request)
+        public async Task<SaldoDisponibleResponse> SaldoDisponible(int CodEmpresa, SaldoDisponibleRequest Request)
         {
             try
             {
@@ -725,7 +727,7 @@ namespace WCFCoreInterno.ApiGalileo
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/SaldoDisponible/{Request.CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/SaldoDisponible/{CodEmpresa}",
                          jsonContent
                      );
 
@@ -744,7 +746,7 @@ namespace WCFCoreInterno.ApiGalileo
             }
         }
 
-        public async Task<ObtenerInformacionClienteResponse> ObtenerInformacionCliente(ObtenerInformacionClienteRequest request)
+        public async Task<ObtenerInformacionClienteResponse> ObtenerInformacionCliente(int CodEmpresa, ObtenerInformacionClienteRequest request)
         {
             try
             {
@@ -757,7 +759,7 @@ namespace WCFCoreInterno.ApiGalileo
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/ObtenerInformacionCliente/{request.CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/ObtenerInformacionCliente/{CodEmpresa}",
                          jsonContent
                      );
 
@@ -776,7 +778,7 @@ namespace WCFCoreInterno.ApiGalileo
             }
         }
 
-        public async Task<ObtenerProductosPorClienteResponse> ObtenerProductosPorCliente(ObtenerProductosPorClienteRequest request)
+        public async Task<ObtenerProductosPorClienteResponse> ObtenerProductosPorCliente(int CodEmpresa, ObtenerProductosPorClienteRequest request)
         {
             try
             {
@@ -789,7 +791,7 @@ namespace WCFCoreInterno.ApiGalileo
                     "application/json");
 
                 var response = await _httpClient.PostAsync(
-                         $"{galileoUri}/api/mKindoService/ObtenerProductosPorCliente/{request.CodEmpresa}",
+                         $"{galileoUri}/api/mKindoService/ObtenerProductosPorCliente/{CodEmpresa}",
                          jsonContent
                      );
 
@@ -809,6 +811,20 @@ namespace WCFCoreInterno.ApiGalileo
         }
 
         #endregion
+
+
+        public int getCodEmpresa()
+        {
+            var request = OperationContext.Current.IncomingMessageHeaders.To;
+            var uri = request?.ToString(); // Ej: https://pruebas.com/soapSrv/4/WCFServicio.svc
+
+            var codEmpresa = uri.Split('/')
+                    .Reverse()
+                    .Skip(1)
+                    .First(); // devuelve "4" en el ejemplo
+
+            return int.Parse(codEmpresa);
+        }
 
     }
 }
